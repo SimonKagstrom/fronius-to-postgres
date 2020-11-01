@@ -1,5 +1,5 @@
 # fronius-to-postgres
-Collect data from the Fronius Symo JSON API and store in a Postgres SQL database
+Collect data from the Fronius Symo JSON API and store in a PostgreSQL database
 
 Based on:
  - https://github.com/szymi-/fronius-to-influx
