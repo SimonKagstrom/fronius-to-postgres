@@ -155,19 +155,18 @@ if __name__ == '__main__':
     create_table(conn)
 
     last_values = {
-        'p_pv' : 0,
+        'p_pv' : 1000000,
         'e_day' : 0,
         'e_year' : 0,
         'e_total' : 0,
     }
 
     while True:
-        time.sleep(120)
-
         values = fronius_data(fronius_ip)
         if values != {}:
             if values['p_pv'] == last_values['p_pv'] and values['e_day'] == last_values['e_day']:
                 print("Unchanged values, skipping")
+                time.sleep(120)
                 continue
 
             print("Inserting new entry", values)
@@ -176,5 +175,7 @@ if __name__ == '__main__':
             insert_entry(conn, values)
         else:
             print("No reply from fronius, skipping")
+
+        time.sleep(300)
 
     sys.exit(0)
