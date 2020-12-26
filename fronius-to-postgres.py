@@ -174,7 +174,9 @@ if __name__ == '__main__':
             last_values = values
             insert_entry(conn, values)
         else:
-            print("No reply from fronius, skipping")
+            print("No reply from fronius, skipping and reconnecting")
+            time.sleep(300)
+            conn = connect(postgres_host, postgres_database, postgres_user, postgres_password)
 
         time.sleep(300)
 
