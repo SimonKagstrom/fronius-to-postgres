@@ -39,3 +39,5 @@ database container in a docker compose file. I.e., something like
       - DATABASE_HOST=database
       - FRONIUS_IP=<IP-to-the-inverter>
 ```
+
+![Grafana screenshot](grafana/braxen.png)
