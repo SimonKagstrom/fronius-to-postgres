@@ -30,7 +30,7 @@ database container in a docker compose file. I.e., something like
       - kalle-db:/var/lib/postgresql/data
 
   fronius-script:
-    image: fronius-script:latest
+    image: simonkagstrom/fronius-script:latest
     restart: always
     environment:
       - DATABASE_USER=kalle
@@ -39,5 +39,7 @@ database container in a docker compose file. I.e., something like
       - DATABASE_HOST=database
       - FRONIUS_IP=<IP-to-the-inverter>
 ```
+
+A snippet is available in `docker-compose.yml`.
 
 ![Grafana screenshot](grafana/braxen.png)

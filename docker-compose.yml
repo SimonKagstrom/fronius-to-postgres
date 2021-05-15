@@ -1,0 +1,10 @@
+# Example snippet for docker-compose
+  fronius-script:
+    image: simonkagstrom/fronius-script:latest
+    restart: always
+    environment:
+      - DATABASE_USER=teslamate    # Postgres username (here shared with teslamate)
+      - DATABASE_PASS=secret       # Postgress password
+      - DATABASE_NAME=teslamate    # Name of the database to put entries in
+      - DATABASE_HOST=database     # Name of the docker-compose image
+      - FRONIUS_IP=192.168.2.198   # The IP address of the Fronius inverter
